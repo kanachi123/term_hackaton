@@ -52,7 +52,7 @@ function App() {
 
           {/* Authorization forms */}
           <div className="forms-section">
-            {/* You can add forms here */}
+            
           </div>
           
           </div>
