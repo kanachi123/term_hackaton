@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+20&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #9b2f75;
+    color: #941313;
+    font-family: "Jersey 20", sans-serif;
+    font-weight: 200;
+}
+.wrapper {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    border: 4px solid #3f0c7b;
+    background: #fff;
+    box-shadow: 4px 4px 0 #6329ab;
+    padding: 20px;
+}
+
+header, footer {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 4px solid #2c021f;
+    border-top: 4px solid #a00a80;
+    background-color: #6329ab;
+    color: #fff;
+}
+
+main {
+    padding: 20px;
+    background-color: #e0e0ff;
+    border: 4px solid #533c8e;
+}
+h2, h3 {
+    color: #6329ab;
+    text-shadow: 2px 2px #fff; 
+}
+h4 {
+    color: #e0e0ff;
+    text-shadow: 1px 1px #5c052f; 
+}
+
+
+button {
+    background-color: #ab0a5b;
+    border: 3px solid #5c052f;
+    padding: 4px  37px;
+     font-family: "Jersey 20", sans-serif;
+    cursor: pointer;
+    transition: all 0.1s;
+    margin:1px 1.8px;
+}
+button:hover {
+    background-color: #b51462;
+    /*transform: translate(-2px, -2px);*/
+}
+
+
+header .logo{
+    font-weight: 600;
+    font-size: 80px;
+}
+
+.presentation {
+    border-top: 4px solid #9f058b; 
+    border-bottom: 4px solid #48052b; 
+    border-left: 0px solid #3e030f; 
+    border-right: 0px solid #b20b9e;
+    background: #6329ab;
+    width: 100%;
+    height: 10px;    
+    margin: 0;
+}
+
+.card {
+     
+    border: 4px solid #95074e;
+    padding: 20px;
+    
+    margin-top: 2px;
+    margin-bottom: 2px;
+    background-color: #b51462;
+}
+
+.scrollable {
+    height: 300px;
+    overflow-y: scroll;
+    border: 4px solid #48052b;
+    padding: 10px;
+    background-color: #ffffe0;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+/*
+.title-block {
+  height: 40px;      
+  line-height: 40px;  
+  margin: 0;       
+  padding: 0 10px;   
+  font-size: 16px; 
+  background-color: #fff0f0; 
+  border: 3px solid #222; 
+}*/
+

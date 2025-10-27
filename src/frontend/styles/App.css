@@ -1,0 +1,92 @@
+.wrapper {
+  width: 90%;
+  max-width: 1200px;
+  margin: 30px auto;
+  border: 4px solid #d633d1;
+  background: #fff;
+  box-shadow: 4px 4px 0 #6329ab;
+  padding: 20px;
+}
+
+.card {
+  border: 4px solid #1c4ea4;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff0f0;
+}
+
+.pixel-button {
+  background-color: #b51462;
+  border: 4px solid #5c052f;
+  font-family: 'Press Start 2P', monospace;
+  padding: 2px 30px;
+  margin:4px 37px;
+  cursor: pointer;
+}
+
+.pixel-button:hover {
+  
+  transform:scale(1.3,1.01);
+}
+
+.scrollable {
+  height: 400px;
+  overflow-y: scroll;
+  border: 4px solid #a30386;
+  padding: 10px;
+  background-color: #ffffe0;
+}
+.text{
+  margin:4px 34.1px;
+}
+.login{
+  background-color: #ab0a5b;
+    border: 3px solid #5c052f;
+    padding: 4px  39px;
+     font-family: "Jersey 20", sans-serif;
+    cursor: pointer;
+    transition: all 0.1s;
+    margin:1px 1.8px;
+}
+.login:hover {
+    transform: translate(-2px, -2px);
+}
+.signup{
+  background-color: #ab0a5b;
+    border: 3px solid #5c052f;
+    padding: 4px  35px;
+     font-family: "Jersey 20", sans-serif;
+    cursor: pointer;
+    transition: all 0.1s;
+    margin:1px 1.8px;
+}
+.signup:hover {
+    transform: translate(2px, -2px);
+}
+.content{
+  transform: scale(1.6);
+}
+.hamburger-button{
+  cursor: pointer;
+  background-color: #ab0a5b;
+    border: 3px solid #5c052f;
+    padding: 4px  35px;
+     font-family: "Jersey 20", sans-serif;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+.navigation{
+  
+  top: -30px;
+  left: -81px;;
+  z-index: 1000;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2.5px;
+  padding-bottom: 2.5px;
+}
+
+.hamburger-button:hover{
+  
+  transform:translate(1px,1px);
+}
