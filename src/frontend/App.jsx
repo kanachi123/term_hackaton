@@ -23,7 +23,6 @@ import FAQ from "./pages/FAQ";
 import Support from "./pages/Support";
 
 // Admin Pages
-import Dashboard from "./pages/Dashboard";
 import Reports from "./pages/Reports";
 import UserManagement from "./pages/UserManagement";
 import Analytics from "./pages/Analytics";
@@ -66,7 +65,7 @@ export default function App() {
         />
 
         <Route path="/dashboard/*" element={<DashboardLayout />}>
-          <Route index element={<Dashboard />} />
+          
           <Route path="reports" element={<Reports />} />
           <Route path="user-management" element={<UserManagement />} />
           <Route path="analytics" element={<Analytics />} />
