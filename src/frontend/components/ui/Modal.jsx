@@ -1,10 +1,33 @@
-export default function Modal({Children,isOpen,onClose,...props}){
-    if(!isOpen) return null;
-    return(<div style={{background:"rgba(0,0,0,0.5)"}}>
-                <div style={{background:"#fff",padding:"20px",margin:"100px auto",width:"300px",position:"relative"}}>
-                    <button onClick={onClose}>close</button>{Children}
+import React, { useEffect } from 'react';
+import { createPortal } from 'react-dom';
+
+export default function Modal({ children, isOpen, onClose, title = "HACKATON 98", className = "" }) {
+  useEffect(() => {
+    const esc = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
+    if (isOpen) {
+      document.addEventListener('keydown', esc);
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      document.removeEventListener('keydown', esc);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
+
+  return createPortal(
+    <div className="modal-overlay" onClick={onClose}>
+      <div className={`modal-window ${className}`} onClick={e => e.stopPropagation()}>
+        <div className="modal-titlebar">
+          <span> {title}</span>
+          <button className="modal-close-btn" onClick={onClose}>X</button>
         </div>
-    </div>);
-
-
+        <div className="modal-content">
+          {children}
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
 }

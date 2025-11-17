@@ -1,4 +1,3 @@
-// frontend/App.jsx — ИСПРАВЛЕННАЯ ВЕРСИЯ (РАБОТАЕТ НА 100%)
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DashboardLayout from "./layouts/DashboardLayout";
 
