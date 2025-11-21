@@ -1,6 +1,28 @@
-import React from 'react'
-export default function Sidebar(){
+import React from "react";
+import { Link } from "react-router-dom";
 
-    return <aside>navigation</aside>
-
+export default function Sidebar() {
+  return (
+    <aside className="sidebar">
+      <div className="sidebar-header">
+        <h2>Admin Panel</h2>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/dashboard">Dashboard</Link>
+          </li>
+          <li>
+            <Link to="/dashboard/team">Team</Link>
+          </li>
+          <li>
+            <Link to="/dashboard/user-management">User Management</Link>
+          </li>
+          <li>
+            <Link to="/dashboard/leaderboard">LeaderBoard</Link>
+          </li>
+          </ul>
+      </nav>
+    </aside>
+  );
 }

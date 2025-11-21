@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import { Header, Sidebar, Footer } from "../components/layout/layout";
 import { useState } from "react";
 
-export default function DashboardLayout() {
+export default function MainLayout() {
   const [isOpen, setIsOpen] = useState(true);
   const toggle = () => setIsOpen(!isOpen);
 
@@ -16,7 +16,7 @@ export default function DashboardLayout() {
           <Outlet />
         </div>
       </div>
-      <Footer />
+      <Footer />то
     </div>
   );
 }

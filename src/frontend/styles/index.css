@@ -13,7 +13,6 @@
   position: relative;
 }
 
-/* Хедер */
 header {
   background: #F67280;
   color: white;
@@ -65,7 +64,6 @@ header .logo {
   cursor: pointer;
 }
 
-/* Основной контент */
 main {
   padding: 30px 20px;
   background: #e0e0ff;
@@ -109,7 +107,6 @@ main {
   line-height: 1.8;
 }
 
-/* Кнопки */
 .pixel-button {
   background: linear-gradient(90deg, #F8B195, #F67280, #F67280);
   border: 5px solid #6C5B7B;
@@ -197,7 +194,6 @@ footer {
   animation: blinkBorder 3s infinite;
 }
 
-/* 2. Подпрыгивающий логотип */
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50%      { transform: translateY(-15px); }
@@ -222,7 +218,6 @@ header .logo {
   font-size: 18px;
 }
 
-/* 4. Пульсирующие кнопки */
 @keyframes pulse {
   0%   { box-shadow: 0 0 0 0 rgba(53,92,125, 0.7); }
   70%  { box-shadow: 0 0 0 5px rgba(255, 0, 255, 0); }
@@ -233,7 +228,6 @@ header .logo {
   animation: pulse 2s infinite;
 }
 
-/* 5. Вращающийся хамбургер */
 @keyframes spin {
   0%   { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -243,7 +237,6 @@ header .logo {
   animation: spin 0.1s ease;
 }
 
-/* 6. Мигающий текст "UNDER CONSTRUCTION" */
 @keyframes blink {
   0%, 100% { opacity: 1; color: #F67280; }
   50%      { opacity: 0.3; color: #F8B195; }
@@ -252,7 +245,6 @@ header .logo {
   animation: blink 1.5s infinite;
 }
 
-/* 7. Плавающие пиксельные частицы (чистый CSS!) */
 @keyframes float {
   0%   { transform: translateY(0) rotate(0deg); }
   50%  { transform: translateY(-20px) rotate(5deg); }
@@ -264,4 +256,35 @@ header .logo {
   pointer-events: none;
   animation: float 4s infinite ease-in-out;
   z-index: 999;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }

@@ -1,15 +1,21 @@
-export default function TextInput({label,value,onChange,type = "text" ,...props}){
+import React from 'react';
 
-    return (
-        <div style={{marginBottom:"10px"}}>
-            <label>{label}</label>
-            <input 
-                type = {type}
-                value = {value}
-                onChange = {(e) => onChange(e.target.value  )} 
-            >
-            </input>
-        </div>
-    );
-
+export default function TextInput({ label, value, onChange, type = "text", ...props }) {
+  return (
+    <div style={{ marginBottom: "15px", borderRadius: "7px" }}>
+      {label && <label>{label}</label>}
+      <input 
+        type={type}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        {...props}
+        style={{
+          width: '100%',
+          padding: '10px',
+          borderRadius: '5px',
+          border: '1px solid #ccc'
+        }}
+      />
+    </div>
+  );
 }
