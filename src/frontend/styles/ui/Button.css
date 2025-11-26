@@ -1,0 +1,67 @@
+.login:hover,
+.signup:hover,
+.hamburger-button:hover {
+  transform: scale(1.2);
+  box-shadow: 5px 5px 5px #fefdfddf;
+}
+
+.hamburger-button {
+  display: none;
+  cursor: pointer;
+}
+
+.pixel-button {
+  background: linear-gradient(90deg, #F8B195, #F67280, #F67280);
+  border: 5px solid #6C5B7B;
+  color: white;
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(14px, 3vw, 22px);
+  padding: 16px 32px;
+  cursor: pointer;
+  box-shadow: 8px 8px 0 #F67280;
+  transition: 0.2s;
+  border-radius: 7px;
+  position: relative;
+  animation: pulse 2s infinite;
+}
+
+.pixel-button:hover {
+  transform: scale(1.15);
+  background: #F67280;
+}
+
+.login, .signup, .hamburger-button, .pixel-button {
+  animation: blinkBorder 3s infinite;
+}
+
+@keyframes blinkBorder {
+  0%, 100% { border-color: #c3b6bc; box-shadow: 0 0 20px #f0edee; }
+  50%      { border-color: #c8b9c362; box-shadow: 0 0 30px #cfc6cb; }
+}
+
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(53,92,125, 0.7); }
+  70%  { box-shadow: 0 0 0 5px rgba(255, 0, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 0, 255, 0); }
+}
+
+@media (max-width: 768px) {
+  .login, .signup { display: none; }
+
+  .hamburger-button {
+    display: block !important;
+    padding: 20px;
+    border-radius: 7px;
+  }
+
+  .navigation.active .login,
+  .navigation.active .signup {
+    display: block;
+    margin: 8px 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .pixel-button { padding: 14px 24px; }
+}
