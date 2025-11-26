@@ -13,7 +13,7 @@
 }
 
 .modal-content {
-  background: #fff;
+  background: #355b7d9c;
   padding: 20px;
   border-radius: 8px;
   max-width: 500px;
@@ -31,10 +31,21 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: #333;
+  color: #ffffff;
 }
 
 @keyframes fadeIn {
   0% { opacity: 0; transform: translateY(-20px); }
   100% { opacity: 1; transform: translateY(0); }
+}
+
+
+
+@keyframes blinkBorder {
+  0%, 100% { border-color: #c3b6bc; box-shadow: 0 0 20px #f0edee; }
+  50%      { border-color: #c8b9c362; box-shadow: 0 0 30px #cfc6cb; }
+}
+
+.modal-content {
+  animation: blinkBorder 10s infinite;
 }

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import '../../styles/ui/Button.css';
 
 export default function Button({ as = 'button', to, children, ...props }) {
+  const className = 'pixel-button';
+
   if (to) {
     return (
       <Link
@@ -10,7 +12,7 @@ export default function Button({ as = 'button', to, children, ...props }) {
         {...props}
         style={{ textDecoration: 'none', ...props.style }}
       >
-        <button className="pixel-button" {...props}>
+        <button className={className} {...props}>
           {children}
         </button>
       </Link>
@@ -18,8 +20,16 @@ export default function Button({ as = 'button', to, children, ...props }) {
   }
 
   if (as === 'a') {
-    return <a className="pixel-button" {...props}>{children}</a>;
+    return (
+      <a className={className} {...props}>
+        {children}
+      </a>
+    );
   }
 
-  return <button className="pixel-button" {...props}>{children}</button>;
+  return (
+    <button className={className} {...props}>
+      {children}
+    </button>
+  );
 }

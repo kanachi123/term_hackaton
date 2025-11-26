@@ -1,5 +1,5 @@
 import React from "react";
-
+import '../../styles/ui/Modal.css';
 export default function Modal({ isOpen, onClose, children }) {
   if (!isOpen) return null;
 

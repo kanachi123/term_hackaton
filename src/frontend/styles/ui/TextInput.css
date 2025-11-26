@@ -1,22 +1,18 @@
-
+/* textinput.css */
 .text-input {
   width: 100%;
   max-width: 400px;
   padding: 14px 20px;
   font-size: clamp(14px, 2.5vw, 18px);
-  border: 4px solid #6C5B7B;
-  border-radius: 8px;
   background: #fff;
   color: #333;
   outline: none;
   transition: all 0.3s ease;
-  box-shadow: 4px 4px 0 #F67280;
   font-family: 'Press Start 2P', monospace;
 }
 
 .text-input:focus {
-  border-color: #F67280;
-  box-shadow: 0 0 10px #F67280;
+  box-shadow: 0 0 10px #a7a3a4;
   transform: scale(1.02);
 }
 
@@ -40,10 +36,37 @@
 }
 
 @keyframes blinkInput {
-  0%, 100% { border-color: #6C5B7B; box-shadow: 4px 4px 0 #F67280; }
-  50%      { border-color: #F67280; box-shadow: 0 0 10px #F8B195; }
+  0%, 100% { border-color: #ffffff; box-shadow: 4px 4px 0 #ffffff; }
+  50%      { border-color: #fdfdfd; box-shadow: 0 0 10px #ffffff; }
 }
 
 .text-input.blink {
-  animation: blinkInput 3s infinite;
+  animation: blinkInput 0.1s infinite;
+}
+
+.text-input {
+  font-family: 'Press Start 2P', monospace; 
+  font-size: 13px;
+  color: #6C5B7B; 
+  padding: 12px 16px;
+  border: 2px solid #6C5B7B;
+  background-color: #fff;
+}
+
+.text-input::placeholder {
+  color: #c8b9c3;  
+}
+
+.text-input[type="password"] {
+  font-size: 13px;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Jersey+20&family=Press+Start+2P&display=swap');
+
+input[type="password"] {
+  font-family: 'Press Start 2P', monospace; /* Пример: кастомный шрифт */
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #6C5B7B;
 }
