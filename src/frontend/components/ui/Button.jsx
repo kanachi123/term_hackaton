@@ -1,14 +1,25 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import '../../styles/ui/Button.css';
 
-export default function Button({as = 'button',to,children,...props}){
-    if(to){
-        return (<Link to={to}{...props} style={{textDecoration:'none' , ...props.style}}><button className="pixel-button">{children}</button></Link>);
-    }
-    if(as === 'a'){
-        return <a{...props}>{children}</a>;
-    }
+export default function Button({ as = 'button', to, children, ...props }) {
+  if (to) {
+    return (
+      <Link
+        to={to}
+        {...props}
+        style={{ textDecoration: 'none', ...props.style }}
+      >
+        <button className="pixel-button" {...props}>
+          {children}
+        </button>
+      </Link>
+    );
+  }
 
-    return <button{...props}>{children}</button>;
+  if (as === 'a') {
+    return <a className="pixel-button" {...props}>{children}</a>;
+  }
 
-};
+  return <button className="pixel-button" {...props}>{children}</button>;
+}

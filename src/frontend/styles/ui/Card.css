@@ -1,0 +1,38 @@
+.card {
+  background: #355C7D;
+  color: white;
+  padding: 30px;
+  border: 6px solid #6C5B7B;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 8px 8px 0 #355C7D;
+}
+
+.scrollable {
+  height: 320px;
+  background: #ffffe0;
+  border: 6px solid #355C7D;
+  padding: 20px;
+  border-radius: 12px;
+  overflow-y: auto;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.card, .scrollable {
+  width: 100%;
+  max-width: 640px;
+}
+
+@keyframes blinkBorder {
+  0%, 100% { border-color: #c3b6bc; box-shadow: 0 0 20px #f0edee; }
+  50%      { border-color: #c8b9c362; box-shadow: 0 0 30px #cfc6cb; }
+}
+
+.card {
+  animation: blinkBorder 3s infinite;
+}
+
+@media (max-width: 768px) {
+  .card { padding: 20px; }
+}
