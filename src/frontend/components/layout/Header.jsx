@@ -3,12 +3,7 @@ import { Link } from "react-router-dom";
 export default function Header() {
   return (
     <header className="app-header">
-      {/*<div>
-        <span className="logo">hackaton</span>
-      </div>
-      <div className='presentation'>
-      </div>
-      */}
+      
       <nav>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
@@ -16,10 +11,6 @@ export default function Header() {
         <Link to="/contact">Contact</Link>
         <Link to="/profile">Profile</Link>
         <Link to="/settings">Settings</Link>
-        
-
-
-
       </nav>
 
     </header>
