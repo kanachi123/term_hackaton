@@ -5,14 +5,15 @@ import '../../styles/index.css';
 export default function Footer() {
   return (
     <footer className="app-footer">
+      
+        <p>© 2025, qti bobo, Inc. All rights reserved.</p>
       <nav>
         <Link to="/terms">Terms </Link>
         <Link to="/privacy">Privacy </Link>
         <Link to="/support">Support </Link>
         <Link to="/help">
-        <div><p>Help</p></div>
+        Help
         </Link>
-        <p>© 2025, qti bobo, Inc. All rights reserved.</p>
       
       </nav>
       

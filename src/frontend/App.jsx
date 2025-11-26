@@ -1,4 +1,3 @@
-// App.jsx
 import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 
@@ -16,9 +15,6 @@ import Help from "./pages/Help";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Support from "./pages/Support";
-import UserManagement from "./pages/UserManagement";
-import TeamDashboard from "./pages/TeamDashboard";
-import LeaderBoard from "./pages/LeaderBoard";
 
 // Components
 import Modal from "./components/ui/Modal";
@@ -29,7 +25,7 @@ export default function App() {
   const { isOpen, openModal, closeModal } = useModal();
   
   const state = location.state;
-  const backgroundLocation = state?.backgroundLocation;
+  const backgroundLocation = state?.backgroundLocation; // Получаем текущий путь для модалки
 
   return (
     <>
@@ -62,8 +58,8 @@ export default function App() {
       </Routes>
 
       {/* === Modal === */}
-      {isOpen && (
-        <Routes>
+      {backgroundLocation && isOpen && (
+        <Routes location={backgroundLocation}>
           <Route
             path="/create-hackathon"
             element={

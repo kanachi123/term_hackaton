@@ -1,0 +1,39 @@
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hamburger-button {
+  display: none;
+  cursor: pointer;
+  font-size: 28px;
+}
+
+/* Скрываем кнопки login/signup на мобильном */
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Для мобильного */
+@media (max-width: 768px) {
+  .hamburger-button {
+    display: block;
+  }
+
+  .auth-buttons {
+    display: none; /* Скрываем изначально */
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .auth-buttons.active {
+    display: flex; /* Показываем при нажатии гамбургера */
+  }
+
+  .navigation {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
