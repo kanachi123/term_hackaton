@@ -21,7 +21,7 @@ export default function Home() {
             <TextInput type="password" placeholder="PASSWORD (max 8 chars)" maxLength={8} required />
             <TextInput type="password" placeholder="CONFIRM PASSWORD" maxLength={8} required />
             <Button type="submit" className="submit-btn">
-              <h6>ENTER THE MATRIX</h6>
+              <h2>submit</h2>
             </Button>
           </form>
         </Card>

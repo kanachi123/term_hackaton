@@ -1,20 +1,26 @@
 // hooks/useModal.js
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function useModal() {
-  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const openModal = (path) => {
-    setIsOpen(true);
-    navigate(path, { state: { backgroundLocation: window.location } });
+    navigate(path, {
+      state: { backgroundLocation: location }
+    });
   };
 
   const closeModal = () => {
-    setIsOpen(false);
-    navigate(-1);
+    const bg = location.state?.backgroundLocation;
+
+    if (bg) {
+      navigate(bg.pathname + bg.search + bg.hash);
+    } else {
+      navigate("/");
+    }
   };
 
-  return { isOpen, openModal, closeModal };
+  return { openModal, closeModal };
 }
