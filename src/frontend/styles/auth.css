@@ -1,0 +1,98 @@
+/* auth.css - styles for auth forms shown inside Modal */
+:root{
+  --auth-bg: #ffffff;
+  --auth-border: rgba(53, 92, 125, 0.45);
+  --auth-text: #355C7D;
+  --accent-1: #F67280;
+  --accent-2: #F8B195;
+  --muted: #6C5B7B;
+}
+
+.auth-page {
+  width: 100%;
+  max-width: 520px;
+  padding: 18px 20px;
+  background: var(--auth-bg);
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(53,92,125,0.12);
+  border: 1px solid var(--auth-border);
+  color: var(--muted);
+}
+
+.auth-page h2 {
+  margin: 0 0 12px 0;
+  font-size: 22px;
+  color: #355C7D;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"],
+.auth-form input[type="password submit"] {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(53, 92, 125, 0.45);
+  background: rgba(53, 92, 125, 0.45);
+  font-size: 14px;
+  outline: none;
+  transition: box-shadow .12s ease, border-color .12s ease;
+}
+
+.auth-form input:focus {
+  box-shadow: 0 4px 18px rgba(53, 92, 125, 0.45);
+  border-color: var(--accent-1);
+}
+
+.auth-form .helper {
+  font-size: 12px;
+  color: #8f7a95;
+}
+
+.auth-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.auth-actions .pixel-button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--accent-2), var(--accent-1));
+  color: #fff;
+  box-shadow: 6px 6px 0 rgba(53, 92, 125, 0.45);
+}
+
+.auth-actions .text-link {
+  background: none;
+  border: none;
+  color: var(--muted);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.auth-error {
+  color: #b00020;
+  font-size: 13px;
+}
+
+@media (max-width: 480px) {
+  .auth-page { padding: 14px; max-width: 92vw; }
+  .auth-page h2 { font-size: 18px; }
+}

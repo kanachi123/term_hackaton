@@ -1,0 +1,100 @@
+/* Sidebar styles */
+.sidebar {
+	width: 300px;
+	background: linear-gradient(180deg, #fffaf0, #f7f2f9);
+	border-right: 6px solid #6C5B7B;
+	padding: 18px;
+	border-radius: 0 8px 8px 0;
+	box-shadow: 6px 6px 0 rgba(0,0,0,0.04);
+	transition: transform 260ms cubic-bezier(.2,.9,.2,1), opacity 200ms ease;
+	transform-origin: left top;
+	opacity: 1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	z-index: 2500;
+}
+
+.sidebar-header h2 {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  color: #355C7D;
+}
+
+.sidebar nav ul { list-style: none; padding: 0; margin: 0; }
+.sidebar nav li { margin-bottom: 8px; }
+
+.sidebar-link {
+	display: block;
+	padding: 10px 12px;
+	color: #355C7D;
+	text-decoration: none;
+	border-radius: 6px;
+	transition: background 0.15s, color 0.15s, transform 0.12s;
+}
+
+.sidebar-link:hover { background: #F8B195; color: #fff; transform: translateX(3px); }
+.sidebar-link.active { background: #F67280; color: #fff; }
+
+.btn-link {
+	background: none;
+	border: none;
+	color: inherit;
+	padding: 10px 12px;
+	text-align: left;
+	width: 100%;
+	cursor: pointer;
+	font: inherit;
+}
+
+@media (max-width: 900px) {
+	.sidebar { width: 100%; order: 2; }
+}
+
+.sidebar.closed {
+	transform: translateX(-110%);
+	opacity: 0;
+	pointer-events: none;
+}
+
+.sidebar.open {
+	transform: translateX(0%);
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.sidebar-divider {
+	height: 1px;
+	background: rgba(0,0,0,0.05);
+	margin: 12px 0;
+}
+
+.sidebar-section {
+	font-size: 13px;
+	color: #6C5B7B;
+	margin: 6px 0 8px 0;
+}
+
+.sidebar-auth {
+	margin-top: auto;
+	display: flex;
+	gap: 10px;
+	flex-direction: column;
+}
+
+.sidebar .login-btn, .sidebar .signup-btn {
+	padding: 10px 12px;
+	border-radius: 6px;
+	border: none;
+	cursor: pointer;
+}
+
+.sidebar .login-btn { background: #F67280; color: #fff; }
+.sidebar .signup-btn { background: #F8B195; color: #fff; }
+
+@media (min-width: 1100px) {
+	/* on very large screens keep sidebar as part of layout if desired */
+	.sidebar { position: fixed; }
+}
+

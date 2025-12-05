@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 
 // Pages
@@ -16,21 +16,23 @@ import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Support from "./pages/Support";
 
+import LeaderBoard from "./pages/LeaderBoard";
 // Components
 import Modal from "./components/ui/Modal";
 import useModal from "./hooks/useModal";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 export default function App() {
   const location = useLocation();
-  const { isOpen, openModal, closeModal } = useModal();
-  
+  const { closeModal } = useModal();
+
   const state = location.state;
-  const backgroundLocation = state?.backgroundLocation; // Получаем текущий путь для модалки
+  const backgroundLocation = state?.backgroundLocation; // background only when present
 
   return (
     <>
-      <Routes location={backgroundLocation || location}>
-        {/* === SITE PAGES === */}
+      <Routes location={location}>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -43,9 +45,13 @@ export default function App() {
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/support" element={<Support />} />
+          <Route path="/leaderboard" element={<LeaderBoard />} />
+          {/* Login/Signup/Create/Join как обычные страницы */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/create-hackathon" element={<CreateHackaton />} />
+          <Route path="/join-hackathon" element={<JoinHackaton />} />
         </Route>
-
-        {/* 404 for site */}
         <Route
           path="*"
           element={
@@ -58,12 +64,28 @@ export default function App() {
       </Routes>
 
       {/* === Modal === */}
-      {backgroundLocation && isOpen && (
+      {backgroundLocation && (
         <Routes location={backgroundLocation}>
+          <Route
+            path="/login"
+            element={
+              <Modal isOpen={true} onClose={closeModal}>
+                <Login />
+              </Modal>
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <Modal isOpen={true} onClose={closeModal}>
+                <Signup />
+              </Modal>
+            }
+          />
           <Route
             path="/create-hackathon"
             element={
-              <Modal onClose={closeModal}>
+              <Modal isOpen={true} onClose={closeModal}>
                 <CreateHackaton />
               </Modal>
             }
@@ -71,7 +93,7 @@ export default function App() {
           <Route
             path="/join-hackathon"
             element={
-              <Modal onClose={closeModal}>
+              <Modal isOpen={true} onClose={closeModal}>
                 <JoinHackaton />
               </Modal>
             }

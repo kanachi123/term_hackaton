@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="app-footer">
       
-        <p>© 2025, qti bobo, Inc. All rights reserved.</p>
+        
       <nav>
         <Link to="/terms">Terms </Link>
         <Link to="/privacy">Privacy </Link>
@@ -16,6 +16,7 @@ export default function Footer() {
         </Link>
       
       </nav>
+      <p>© 2025, qti bobo, Inc. All rights reserved.</p>
       
     </footer>
   );

@@ -1,26 +1,49 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import '../../styles/index.css';
 import '../../styles/App.css';
-
 import '../../styles/pages/Home.css';
-export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
+import '../../styles/layouts/Header.css'
+
+export default function Header({ toggleSidebar, isOpen }) {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const openLoginModal = () => {
+    navigate("/login", {
+      state: { backgroundLocation: location },
+    });
+    // close sidebar if it's open
+    if (isOpen && typeof toggleSidebar === "function") toggleSidebar();
+  };
+
+  const openSignupModal = () => {
+    navigate("/signup", {
+      state: { backgroundLocation: location },
+    });
+    if (isOpen && typeof toggleSidebar === "function") toggleSidebar();
+  };
 
   return (
     <header>
       <div className="header-top">
-        <div className="logo">hackaton</div>
+        <div className="logo">hackamaka</div>
 
         <div
           className="hamburger-button"
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => {
+            if (typeof toggleSidebar === "function") toggleSidebar();
+          }}
+          aria-label="Toggle navigation"
+          role="button"
+          tabIndex={0}
         >
           ☰
         </div>
       </div>
 
-      <nav className="navigation">
+      {/* Desktop Navigation */}
+      {/* <nav className="navigation desktop-nav">
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/hackathons">Hackatons</Link>
@@ -28,12 +51,10 @@ export default function Header() {
         <Link to="/profile">Profile</Link>
         <Link to="/settings">Settings</Link>
 
-        {/* Кнопки login/signup, скрытые на десктоп */}
-        <div className={`auth-buttons ${menuOpen ? "active" : ""}`}>
-          <Link to="/login" className="login">Login</Link>
-          <Link to="/signup" className="signup">Sign Up</Link>
-        </div>
-      </nav>
+        
+        <button className="login" onClick={openLoginModal}>Login</button>
+        <button className="signup" onClick={openSignupModal}>Sign Up</button>
+      </nav> */}
     </header>
   );
 }

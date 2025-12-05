@@ -1,28 +1,24 @@
 .login:hover,
 .signup:hover,
 .hamburger-button:hover {
-  transform: scale(1.2);
-  box-shadow: 5px 5px 5px #fefdfddf;
+  transform: scale(1.08);
+  box-shadow: 8px 8px 0 #F8B195;
 }
 
 .hamburger-button {
-  display: none;
   cursor: pointer;
-}
 
-.pixel-button {
-  background: linear-gradient(90deg, #F8B195, #F67280, #F67280);
-  border: 5px solid #6C5B7B;
-  color: white;
+  background: linear-gradient(90deg, #F8B195, #F67280 80%);
+  border: 2px solid #6C5B7B;
+  color: #fff;
   font-family: 'Press Start 2P', monospace;
-  font-size: clamp(14px, 3vw, 22px);
-  padding: 16px 32px;
+  font-size: clamp(14px, 2vw, 20px);
+  padding: 12px 28px;
   cursor: pointer;
-  box-shadow: 8px 8px 0 #F67280;
-  transition: 0.2s;
+  box-shadow: 4px 4px 0 #F67280;
   border-radius: 7px;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
   position: relative;
-  animation: pulse 2s infinite;
 }
 
 .pixel-button:hover {
@@ -49,7 +45,6 @@
   .login, .signup { display: none; }
 
   .hamburger-button {
-    display: block !important;
     padding: 20px;
     border-radius: 7px;
   }
@@ -64,4 +59,12 @@
 
 @media (max-width: 480px) {
   .pixel-button { padding: 14px 24px; }
+}
+.hamburger-button:hover {
+  background: #F67280;
+  transform: scale(1.08);
+}
+
+@media (max-width: 768px) {
+  .login, .signup { display: none; }
 }

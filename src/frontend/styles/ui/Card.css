@@ -1,11 +1,5 @@
 .card {
-  background: #355C7D;
-  color: white;
-  padding: 30px;
-  border: 6px solid #6C5B7B;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 8px 8px 0 #355C7D;
+  animation: blinkBorder 3s infinite;
 }
 
 .scrollable {
@@ -30,9 +24,51 @@
 }
 
 .card {
-  animation: blinkBorder 3s infinite;
+  background: #355C7D;
+  color: #fff;
+  padding: 28px;
+  border: 2px solid #6C5B7B;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 4px 4px 0 #F67280;
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+  transition: box-shadow 0.2s, transform 0.2s;
+
+
+
+  box-shadow: 8px 8px 0 #F8B195;
+  transform: scale(1.03);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .card { padding: 20px; }
+}
+
+.scrollable {
+  height: 320px;
+  background: #ffffe0;
+  border: 2px solid #355C7D;
+  padding: 20px;
+  border-radius: 12px;
+  overflow-y: auto;
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+}
+  
+.card {
+
+  background: #355C7D;
+  color: white;
+  padding: 70%;
+  
+  border: 6px solid #6C5B7B;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 8px 8px 0 #355C7D;
+
 }

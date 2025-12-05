@@ -1,19 +1,21 @@
 /* textinput.css */
 .text-input {
-  width: 100%;
-  max-width: 400px;
-  padding: 14px 20px;
-  font-size: clamp(14px, 2.5vw, 18px);
-  background: #fff;
-  color: #333;
-  outline: none;
-  transition: all 0.3s ease;
-  font-family: 'Press Start 2P', monospace;
+  width: 100%; 
+  max-width: 400px; 
+  padding: 14px 20px; 
+  font-size: clamp(14px, 2vw, 18px); 
+  background: #fff; 
+  color: #6C5B7B; 
+  outline: none; 
+  border: 2px solid #6C5B7B; 
+  border-radius: 7px; 
+  transition: box-shadow 0.2s, transform 0.2s; 
+  font-family: 'Press Start 2P', monospace; 
 }
 
 .text-input:focus {
-  box-shadow: 0 0 10px #a7a3a4;
-  transform: scale(1.02);
+  box-shadow: 0 0 10px #F8B195; 
+  transform: scale(1.03); 
 }
 
 .text-input::placeholder {

@@ -5,7 +5,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(53, 92, 125, 0.45);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,25 +13,31 @@
 }
 
 .modal-content {
-  background: #355b7d9c;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 500px;
+  background: #fff;
+  padding: 32px 24px;
+  border-radius: 16px;
+  max-width: 420px;
   width: 100%;
   position: relative;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 32px rgba(53, 92, 125, 0.18);
+  border: 2px solid #F8B195;
   animation: fadeIn 0.3s ease;
 }
 
 .modal-close {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 12px;
+  right: 12px;
   font-size: 20px;
   background: none;
   border: none;
   cursor: pointer;
-  color: #ffffff;
+  color: var(--accent-dark, #F67280);
+  transition: color 0.18s ease, transform 0.12s ease;
+}
+.modal-close:hover {
+  color: #355C7D;
+  transform: scale(1.06);
 }
 
 @keyframes fadeIn {
@@ -41,11 +47,4 @@
 
 
 
-@keyframes blinkBorder {
-  0%, 100% { border-color: #c3b6bc; box-shadow: 0 0 20px #f0edee; }
-  50%      { border-color: #c8b9c362; box-shadow: 0 0 30px #cfc6cb; }
-}
-
-.modal-content {
-  animation: blinkBorder 10s infinite;
-}
+/* removed noisy blink animation for modal */

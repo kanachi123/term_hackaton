@@ -1,0 +1,7 @@
+/* Simple auth form styles used inside modal */
+.auth-page { padding: 8px 12px; max-width: 480px; }
+.auth-page h2 { margin-top: 0; color: #355C7D; }
+.auth-form { display: flex; flex-direction: column; gap: 12px; }
+.auth-form label { display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
+.auth-form input { padding: 8px 10px; border-radius: 6px; border: 1px solid #ccc; }
+.auth-form .pixel-button { align-self: flex-start; }
