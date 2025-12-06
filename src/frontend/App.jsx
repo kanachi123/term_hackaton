@@ -1,5 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
+import AdminLayout from "./layouts/AdminLayout";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 // Pages
 import Home from "./pages/Home";
@@ -17,6 +19,13 @@ import Privacy from "./pages/Privacy";
 import Support from "./pages/Support";
 
 import LeaderBoard from "./pages/LeaderBoard";
+
+// Admin Pages
+import AdminDashboard from "./pages/admin/Dashboard";
+import AdminUserManagement from "./pages/admin/UserManagement";
+import AdminTeamDashboard from "./pages/admin/TeamDashboard";
+import AdminLeaderBoard from "./pages/admin/LeaderBoard";
+
 // Components
 import Modal from "./components/ui/Modal";
 import useModal from "./hooks/useModal";
@@ -51,6 +60,21 @@ export default function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/create-hackathon" element={<CreateHackaton />} />
           <Route path="/join-hackathon" element={<JoinHackaton />} />
+        </Route>
+
+        {/* Admin Routes - Protected */}
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute requireAdmin={true}>
+              <AdminLayout />
+            </ProtectedRoute>
+          }
+        >
+          <Route index element={<AdminDashboard />} />
+          <Route path="user-management" element={<AdminUserManagement />} />
+          <Route path="team" element={<AdminTeamDashboard />} />
+          <Route path="leaderboard" element={<AdminLeaderBoard />} />
         </Route>
         <Route
           path="*"

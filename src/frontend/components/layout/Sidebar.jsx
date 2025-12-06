@@ -1,10 +1,22 @@
-import React from "react";
-import { NavLink, useNavigate, useLocation } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink, useNavigate,useLocation } from "react-router-dom";
+import Button from '../ui/Button';
+
+
+// eslint-disable-next-line no-unused-vars
+import Modal from '../ui/Modal';
+// eslint-disable-next-line no-unused-vars
+import Login from '../../pages/Login';
+// eslint-disable-next-line no-unused-vars
+import Signup from '../../pages/Signup';
 import '../../styles/index.css';
 import '../../styles/App.css';
 import '../../styles/layouts/Sidebar.css';
 
 export default function Sidebar({ open = true, toggleSidebar }) {
+  const [loginModalOpen, setLoginModalOpen] = useState(false);
+  const [signupModalOpen, setSignupModalOpen] = useState(false);
+
   const links = [
     { name: "Dashboard", path: "/dashboard" },
     { name: "Team", path: "/dashboard/team" },
@@ -34,9 +46,17 @@ export default function Sidebar({ open = true, toggleSidebar }) {
     if (typeof toggleSidebar === "function") toggleSidebar();
   };
 
+  const closeLoginModal = () => {
+    setLoginModalOpen(false);
+  };
+
   const openSignupModal = () => {
     navigate('/signup', { state: { backgroundLocation: location } });
     if (typeof toggleSidebar === "function") toggleSidebar();
+  };
+
+  const closeSignupModal = () => {
+    setSignupModalOpen(false);
   };
 
   return (
@@ -83,9 +103,18 @@ export default function Sidebar({ open = true, toggleSidebar }) {
       </nav>
 
       <div className="sidebar-auth">
-        <button className="login-btn" onClick={openLoginModal}>Login</button>
-        <button className="signup-btn" onClick={openSignupModal}>Sign Up</button>
+        <Button className="login-btn" onClick={openLoginModal}>Login</Button>
+        <Button className="signup-btn" onClick={openSignupModal}>Sign Up</Button>
       </div>
+
+      {/* Auth Modals */}
+      <Modal isOpen={loginModalOpen} onClose={closeLoginModal}>
+        <Login onClose={closeLoginModal} />
+      </Modal>
+
+      <Modal isOpen={signupModalOpen} onClose={closeSignupModal}>
+        <Signup onClose={closeSignupModal} />
+      </Modal>
     </aside>
   );
 }

@@ -1,0 +1,15 @@
+/* Container Styles */
+.container {
+  flex: 1;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+}
+

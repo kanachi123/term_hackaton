@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import '../styles/pages/TeamDashboard.css';
-import Button from '../components/ui/Button';
-import Card from '../components/ui/Card';
+import '../../styles/pages/TeamDashboard.css';
+import Button from '../../components/ui/Button';
+import Card from '../../components/ui/Card';
 
 const TeamDashboard = () => {
   const [activeTab, setActiveTab] = useState('overview');

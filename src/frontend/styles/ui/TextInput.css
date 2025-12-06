@@ -1,74 +1,73 @@
-/* textinput.css */
+/* =========================
+   TextInput Component Styles
+========================= */
+
 .text-input {
-  width: 100%; 
-  max-width: 400px; 
-  padding: 14px 20px; 
-  font-size: clamp(14px, 2vw, 18px); 
-  background: #fff; 
-  color: #6C5B7B; 
-  outline: none; 
-  border: 2px solid #6C5B7B; 
-  border-radius: 7px; 
-  transition: box-shadow 0.2s, transform 0.2s; 
-  font-family: 'Press Start 2P', monospace; 
+  width: 100%;
+  max-width: 400px;
+  padding: clamp(12px, 2vw, 14px) clamp(16px, 3vw, 20px);
+  font-size: clamp(12px, 2vw, 18px);
+  background: #fff;
+  color: #2c1810;
+  outline: none;
+  border: 2px solid #ffffff;
+  border-radius: clamp(6px, 1vw, 7px);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1), transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: 'Press Start 2P', monospace;
+  animation: blinkBorder 3s infinite;
 }
 
 .text-input:focus {
-  box-shadow: 0 0 10px #F8B195; 
-  transform: scale(1.03); 
+  box-shadow: 0 0 15px rgba(248, 177, 149, 0.6);
+  transform: scale(1.02);
+  border-color: #F8B195;
 }
 
 .text-input::placeholder {
-  color: #c8b9c3;
-  opacity: 0.8;
+  color: #c8b9c37a;
+  opacity: 0.7;
 }
 
-@media (max-width: 768px) {
-  .text-input {
-    padding: 12px 16px;
-    font-size: clamp(12px, 3vw, 16px);
-  }
+.text-input:hover {
+  border-color: #F8B195;
 }
 
-@media (max-width: 480px) {
-  .text-input {
-    padding: 10px 12px;
-    font-size: 14px;
-  }
+/* Специфические стили для разных типов input */
+.text-input[type="password"] {
+  font-size: clamp(10px, 1.8vw, 16px);
+  letter-spacing: 2px;
 }
 
+.text-input[type="email"] {
+  text-transform: lowercase;
+}
+
+/* Анимации */
 @keyframes blinkInput {
   0%, 100% { border-color: #ffffff; box-shadow: 4px 4px 0 #ffffff; }
   50%      { border-color: #fdfdfd; box-shadow: 0 0 10px #ffffff; }
 }
 
-.text-input.blink {
-  animation: blinkInput 0.1s infinite;
+@keyframes blinkBorder {
+  0%, 100% { border-color: #c3b6bc; box-shadow: 0 0 20px rgba(240, 237, 238, 0.6); }
+  50%      { border-color: #c8b9c362; box-shadow: 0 0 30px rgba(207, 198, 203, 0.4); }
 }
 
-.text-input {
-  font-family: 'Press Start 2P', monospace; 
-  font-size: 13px;
-  color: #6C5B7B; 
-  padding: 12px 16px;
-  border: 2px solid #6C5B7B;
-  background-color: #fff;
+/* Медиа-запросы */
+@media (max-width: 768px) {
+  .text-input {
+    padding: clamp(10px, 1.8vw, 12px) clamp(14px, 2.5vw, 16px);
+    font-size: clamp(11px, 2.2vw, 16px);
+  }
 }
 
-.text-input::placeholder {
-  color: #c8b9c3;  
-}
+@media (max-width: 480px) {
+  .text-input {
+    padding: clamp(8px, 1.5vw, 10px) clamp(12px, 2vw, 14px);
+    font-size: clamp(10px, 2vw, 14px);
+  }
 
-.text-input[type="password"] {
-  font-size: 13px;
-}
-
-
-@import url('https://fonts.googleapis.com/css2?family=Jersey+20&family=Press+Start+2P&display=swap');
-
-input[type="password"] {
-  font-family: 'Press Start 2P', monospace; /* Пример: кастомный шрифт */
-  font-size: 18px;
-  letter-spacing: 2px;
-  color: #6C5B7B;
+  .text-input[type="password"] {
+    font-size: clamp(9px, 1.8vw, 13px);
+  }
 }

@@ -1,7 +1,67 @@
 /* Simple auth form styles used inside modal */
 .auth-page { padding: 8px 12px; max-width: 480px; }
-.auth-page h2 { margin-top: 0; color: #355C7D; }
+.auth-page h2 { margin-top: 0; color: #355C7D;border: 8px solid #355C7D}
 .auth-form { display: flex; flex-direction: column; gap: 12px; }
 .auth-form label { display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
-.auth-form input { padding: 8px 10px; border-radius: 6px; border: 1px solid #ccc; }
-.auth-form .pixel-button { align-self: flex-start; }
+.auth-form input { padding: 8px 10px; border-radius: 4px; border: 8px solid #ccc; }
+.auth-form .pixel-button { align-self: flex-start; 
+
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--color-border);
+}
+
+.auth-standalone h2 {
+  margin-top: 0;
+  color: var(--color-secondary);
+  text-align: center;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+}
+
+.auth-standalone .auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.auth-standalone .auth-form label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.auth-standalone .auth-form input {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  border: 2px solid var(--color-border-light);
+  background: var(--color-bg-card);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  transition: all var(--transition-fast);
+}
+
+.auth-standalone .auth-form input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(246, 114, 128, 0.1);
+  outline: none;
+}
+
+.auth-standalone .pixel-button {
+  align-self: flex-start;
+  margin-top: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+  .auth-standalone {
+    padding: var(--spacing-xl);
+    margin: var(--spacing-xl) auto;
+  }
+
+  .auth-standalone h2 {
+    font-size: var(--font-size-lg);
+  }
+}

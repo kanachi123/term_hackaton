@@ -1,8 +1,8 @@
 /* Sidebar styles */
 .sidebar {
 	width: 300px;
-	background: linear-gradient(180deg, #fffaf0, #f7f2f9);
-	border-right: 6px solid #6C5B7B;
+	
+	
 	padding: 18px;
 	border-radius: 0 8px 8px 0;
 	box-shadow: 6px 6px 0 rgba(0,0,0,0.04);
@@ -14,6 +14,9 @@
 	left: 0;
 	height: 100vh;
 	z-index: 2500;
+	
+	background: #ffffff50;
+	backdrop-filter: blur(2px);
 }
 
 .sidebar-header h2 {
@@ -49,7 +52,18 @@
 }
 
 @media (max-width: 900px) {
-	.sidebar { width: 100%; order: 2; }
+	.sidebar {
+		width: 100%;
+		order: 2;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1000;
+		background: #ffffff50;
+		backdrop-filter: blur(2px);
+	}
 }
 
 .sidebar.closed {
@@ -72,7 +86,7 @@
 
 .sidebar-section {
 	font-size: 13px;
-	color: #6C5B7B;
+	color: #ffffff;
 	margin: 6px 0 8px 0;
 }
 

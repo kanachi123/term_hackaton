@@ -1,0 +1,114 @@
+/* Profile Page Styles */
+.profile-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.profile-edit label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 14px;
+  color: #6C5B7B;
+}
+
+.profile-view {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-avatar {
+  margin-bottom: 15px;
+}
+
+.profile-email {
+  color: #6C5B7B;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.profile-section {
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+}
+
+.profile-section h3 {
+  margin: 0 0 15px 0;
+  color: #355C7D;
+  font-size: 18px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.skill-tag {
+  background: #F8B195;
+  color: #355C7D;
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.contact-info a {
+  color: #F67280;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: bold;
+  color: #F67280;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  color: #6C5B7B;
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+

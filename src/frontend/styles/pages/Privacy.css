@@ -1,0 +1,35 @@
+/* Privacy Page Styles */
+main h2 {
+  color: #355C7D;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+main h3 {
+  color: #6C5B7B;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+main ul {
+  margin: 15px 0;
+  padding-left: 25px;
+  color: #6C5B7B;
+  line-height: 1.8;
+}
+
+main ul li {
+  margin: 8px 0;
+}
+
+main p {
+  line-height: 1.8;
+  color: #6C5B7B;
+  margin: 15px 0;
+}
+
+main strong {
+  color: #355C7D;
+}
+

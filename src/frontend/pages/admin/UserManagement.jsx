@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import '../styles/pages/UserManagement.css';
-import TextInput from '../components/ui/TextInput';
-import Button from '../components/ui/Button';
-import Card from '../components/ui/Card';
+import '../../styles/pages/UserManagement.css';
+import TextInput from '../../components/ui/TextInput';
+import Button from '../../components/ui/Button';
+import Card from '../../components/ui/Card';
 
 const UserManagement = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -71,7 +71,7 @@ const UserManagement = () => {
             </select>
           </div>
         </div>
-      </div>
+      </Card>
 
       <div className="card">
         <div className="users-table">

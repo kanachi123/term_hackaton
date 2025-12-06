@@ -1,0 +1,71 @@
+/* Contact Page Styles */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.contact-item {
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border-left: 4px solid #F67280;
+  font-size: 14px;
+  color: #ffffff;
+  
+}
+
+.contact-item strong {
+  color: #355C7D;
+  margin-right: 10px;
+}
+
+/* Utility classes for textarea */
+.resize-vertical {
+  resize: vertical;
+}
+
+.font-inherit {
+  font-family: inherit;
+}
+
+.text-sm {
+  font-size: 14px;
+}
+
+.p-sm {
+  padding: 10px;
+}
+
+
+.resize-vertical {
+  resize: vertical;
+}
+
+.font-inherit {
+  font-family: inherit;
+}
+
+.text-sm {
+  font-size: 14px;
+}
+
+.p-sm {
+  padding: 10px;
+}
+

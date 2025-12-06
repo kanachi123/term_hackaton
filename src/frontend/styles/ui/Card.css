@@ -1,74 +1,52 @@
-.card {
-  animation: blinkBorder 3s infinite;
-}
+/* =========================
+   Card Component Styles
+========================= */
 
-.scrollable {
-  height: 320px;
-  background: #ffffe0;
-  border: 6px solid #355C7D;
-  padding: 20px;
-  border-radius: 12px;
-  overflow-y: auto;
-  font-size: 18px;
-  line-height: 1.8;
-}
-
-.card, .scrollable {
-  width: 100%;
-  max-width: 640px;
-}
-
+/* Анимация для карточек */
 @keyframes blinkBorder {
-  0%, 100% { border-color: #c3b6bc; box-shadow: 0 0 20px #f0edee; }
-  50%      { border-color: #c8b9c362; box-shadow: 0 0 30px #cfc6cb; }
+  0%, 100% { border-color: #c3b6bc; box-shadow: 0 0 20px rgba(240, 237, 238, 0.6); }
+  50%      { border-color: #c8b9c362; box-shadow: 0 0 30px rgba(207, 198, 203, 0.4); }
 }
 
-.card {
+/* Специфические стили для Card компонента */
+.card-component {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(20px, 4vw, 28px);
   background: #355C7D;
   color: #fff;
-  padding: 28px;
-  border: 2px solid #6C5B7B;
-  border-radius: 12px;
+  border: clamp(4px, 0.4vw, 6px) solid #6C5B7B;
+  border-radius: clamp(8px, 1vw, 12px);
   text-align: center;
-  box-shadow: 4px 4px 0 #F67280;
-  max-width: 640px;
-  width: 100%;
-  margin: 0 auto;
-  transition: box-shadow 0.2s, transform 0.2s;
-
-
-
-  box-shadow: 8px 8px 0 #F8B195;
-  transform: scale(1.03);
+  box-shadow: clamp(6px, 0.6vw, 8px) clamp(6px, 0.6vw, 8px) 0 #F8B195;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1), transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  animation: blinkBorder 3s infinite;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
 }
 
+/* Hover эффект */
+.card-component:hover {
+  transform: scale(1.02);
+  box-shadow: clamp(8px, 0.8vw, 10px) clamp(8px, 0.8vw, 10px) 0 #F67280;
+}
+
+/* Адаптивность */
 @media (max-width: 1024px) {
-  .card { padding: 20px; }
+  .card-component {
+    padding: clamp(16px, 3vw, 24px);
+  }
 }
 
-.scrollable {
-  height: 320px;
-  background: #ffffe0;
-  border: 2px solid #355C7D;
-  padding: 20px;
-  border-radius: 12px;
-  overflow-y: auto;
-  font-size: 18px;
-  line-height: 1.8;
-  max-width: 640px;
-  width: 100%;
-  margin: 0 auto;
+@media (max-width: 768px) {
+  .card-component {
+    padding: clamp(14px, 2.5vw, 20px);
+  }
 }
-  
-.card {
 
-  background: #355C7D;
-  color: white;
-  padding: 70%;
-  
-  border: 6px solid #6C5B7B;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 8px 8px 0 #355C7D;
-
+@media (max-width: 480px) {
+  .card-component {
+    padding: clamp(12px, 2vw, 16px);
+  }
 }

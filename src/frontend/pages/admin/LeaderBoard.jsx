@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import '../styles/pages/LeaderBoard.css';
-import Card from '../components/ui/Card';
+import '../../styles/pages/LeaderBoard.css';
+import Card from '../../components/ui/Card';
 
 const LeaderBoard = () => {
   const [selectedHackathon, setSelectedHackathon] = useState('all');

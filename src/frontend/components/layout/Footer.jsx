@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../styles/App.css';
 import '../../styles/index.css';
+import '../../styles/layouts/Footer.css'
 export default function Footer() {
   return (
     <footer className="app-footer">

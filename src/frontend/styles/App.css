@@ -9,13 +9,19 @@
 
 body {
   font-family: "Jersey 20", sans-serif;
-  background: #355C7D;
-  color: #6C5B7B;
+  background: linear-gradient(135deg, #355C7D 0%, #4a6b8a 100%);
+  color: #ffffff;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 10px;
+  padding: clamp(5px, 1vw, 10px);
+  line-height: 1.6;
+  letter-spacing: clamp(0.2px, 0.5vw, 0.5px);
+  font-size: clamp(14px, 2vw, 16px);
 }
+
+img, video { max-width: 100%; height: auto; display: block; }
+
 
 img, video { max-width: 100%; height: auto; display: block; }

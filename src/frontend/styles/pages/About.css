@@ -1,0 +1,29 @@
+/* About Page Styles */
+main ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+main ul li {
+  padding: 10px 0;
+  padding-left: 25px;
+  position: relative;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+main ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #F67280;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+main h2 {
+  color: #ffffff;
+  margin-top: 0;
+}
+

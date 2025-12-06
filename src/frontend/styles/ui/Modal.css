@@ -1,50 +1,148 @@
-/* modal.css */
+/* =========================
+   Modal Component Styles
+========================= */
+
 .modal-backdrop {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(53, 92, 125, 0.45);
+  background: rgba(53, 92, 125, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  /* backdrop-filter: blur(2px); */
+  animation: fadeInBackdrop 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-content {
   background: #fff;
-  padding: 32px 24px;
-  border-radius: 16px;
-  max-width: 420px;
+  padding: clamp(24px, 5vw, 32px) clamp(20px, 4vw, 24px);
+  border-radius: clamp(12px, 2vw, 16px);
+  max-width: min(500px, 90vw);
   width: 100%;
   position: relative;
-  box-shadow: 0 8px 32px rgba(53, 92, 125, 0.18);
-  border: 2px solid #F8B195;
-  animation: fadeIn 0.3s ease;
+  border: clamp(2px, 0.2vw, 3px) solid #F8B195;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: fadeInModal 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin: clamp(10px, 2vw, 20px);
 }
 
 .modal-close {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  font-size: 20px;
+  top: clamp(8px, 1.5vw, 10px);
+  right: clamp(8px, 1.5vw, 10px);
+  font-size: clamp(18px, 3vw, 20px);
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--accent-dark, #F67280);
-  transition: color 0.18s ease, transform 0.12s ease;
+  color: #2c1810;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: clamp(4px, 0.8vw, 6px);
+  border-radius: 50%;
 }
+
 .modal-close:hover {
+  color: #F67280;
+  background: rgba(246, 114, 128, 0.1);
+  transform: scale(1.1);
+}
+
+/* Специфические стили для модального контента */
+.modal-header {
+  margin-bottom: clamp(16px, 3vw, 24px);
+  text-align: center;
+}
+
+.modal-header h2 {
   color: #355C7D;
-  transform: scale(1.06);
+  font-size: clamp(20px, 4vw, 28px);
+  margin: 0 0 clamp(8px, 1.5vw, 12px) 0;
 }
 
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(-20px); }
-  100% { opacity: 1; transform: translateY(0); }
+.modal-body {
+  color: #2c1810;
+  line-height: 1.6;
+  font-size: clamp(14px, 2.5vw, 16px);
 }
 
+.modal-footer {
+  margin-top: clamp(20px, 4vw, 32px);
+  display: flex;
+  gap: clamp(12px, 2.5vw, 16px);
+  justify-content: flex-end;
+}
 
+/* Анимации */
+@keyframes fadeInBackdrop {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
-/* removed noisy blink animation for modal */
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes blinkBorder {
+  0%, 100% { border-color: #c3b6bc; box-shadow: 0 0 20px rgba(240, 237, 238, 0.6); }
+  50%      { border-color: #c8b9c362; box-shadow: 0 0 30px rgba(207, 198, 203, 0.4); }
+}
+
+/* Медиа-запросы */
+@media (max-width: 768px) {
+  .modal-backdrop {
+    padding: clamp(10px, 2vw, 20px);
+  }
+
+  .modal-content {
+    padding: clamp(16px, 3vw, 24px) clamp(14px, 2.5vw, 18px);
+    margin: clamp(10px, 2vw, 15px);
+    border-radius: clamp(10px, 2vw, 14px);
+    max-width: min(450px, 95vw);
+  }
+
+  .modal-header h2 {
+    font-size: clamp(16px, 3vw, 22px);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .modal-body {
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+  }
+
+  .modal-close {
+    top: clamp(6px, 1vw, 8px);
+    right: clamp(6px, 1vw, 8px);
+    font-size: clamp(16px, 2.5vw, 18px);
+    padding: clamp(4px, 0.7vw, 6px);
+  }
+
+  .modal-footer {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    padding: clamp(16px, 3.5vw, 24px) clamp(14px, 3vw, 18px);
+    margin: clamp(10px, 2vw, 15px);
+  }
+
+  .modal-close {
+    top: clamp(6px, 1.2vw, 8px);
+    right: clamp(6px, 1.2vw, 8px);
+    font-size: clamp(16px, 2.5vw, 18px);
+  }
+}

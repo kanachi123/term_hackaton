@@ -1,0 +1,71 @@
+/* =========================
+   Wrapper
+========================= */
+.wrapper {
+  width: 90%;           /* ширина на больших экранах */
+  max-width: 1600px;    /* не растягиваем слишком */
+  margin: 20px auto;    /* центрируем */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* =========================
+   Header / Footer / Navigation
+========================= */
+header,
+footer,
+.navigation {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* =========================
+   Main Content
+========================= */
+.main-content {
+  display: flex;
+  flex: 1;
+  position: relative;
+  min-height: 0;
+}
+
+main {
+  flex: 1;
+  padding: 24px 20px;
+  width: 100%;
+  max-width: 1400px;      /* увеличено для десктопа */
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* =========================
+   Адаптивность для планшетов и телефонов
+========================= */
+@media (max-width: 1024px) {
+  .wrapper,
+  header,
+  footer,
+  .navigation,
+  main {
+    width: 95%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper,
+  header,
+  footer,
+  .navigation,
+  main {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 16px;
+  }
+}

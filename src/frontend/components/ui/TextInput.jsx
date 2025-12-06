@@ -19,8 +19,17 @@ export default function TextInput({
     }
   };
 
+  const containerStyle = { marginBottom: "15px", borderRadius: "7px" };
+  const inputStyle = {
+    width: '100%',
+    padding: '10px',
+    borderRadius: '5px',
+    border: '1px solid #4f6cc3ff',
+    ...style
+  };
+
   return (
-    <div className={`text-input-container ${className}`} style={{ marginBottom: "15px", borderRadius: "7px", ...style }}>
+    <div className={`text-input-container ${className}`} style={containerStyle}>
       
       <input
         type={type}
@@ -30,13 +39,7 @@ export default function TextInput({
         name={name} 
         {...props}
         className="text-input"
-        style={{
-          width: '100%',
-          padding: '10px',
-          borderRadius: '5px',
-          border: '1px solid #4f6cc3ff',
-          ...style
-        }}
+        style={inputStyle}
       />
     </div>
   );
